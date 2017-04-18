@@ -1,0 +1,65 @@
+<html>
+
+<head>
+	<title>PDF test</title>
+	<script type="text/javascript" src="jspdf.min.js"></script>
+	<script type="text/javascript" src="template.js"></script>
+	<script>
+
+	
+
+	function getPDF() {
+
+		var query = document.getElementById('query').value;
+		var parsedQuery = query.split("\n");	
+		
+		var doc = new jsPDF();
+
+		
+		//doc.addImage(imgData,'JPEG',5,0,200,300);
+		//doc.setFontSize(12);
+		//doc.text(122,258,parsedQuery[0]);
+		//doc.text(32,258,parsedQuery[1]);
+		
+		/*
+		doc.setFontSize(11);	
+		var yPointer = 85;
+		var counter = 1;
+		for(var i  = 2 ; i < parsedQuery.length ; i++) {
+			var parsedItems = parsedQuery[i].split("#");
+			console.log(parsedItems);
+			doc.text(30,yPointer,counter+".");
+			doc.text(40,yPointer,parsedItems[0]);
+			doc.text(119,yPointer,parsedItems[1]);
+			counter++;
+			yPointer+=5;
+		}
+		*/
+		doc.save('Laporan.pdf');
+	}
+
+	</script>
+</head>
+
+
+<body >
+
+<p> Berikut format untuk membuat laporan </p>
+<textarea  rows="5" cols="50">
+Nama Penerima
+Nama Pengirim
+Nama Item#Jumlah
+Nama Item#Jumlah
+</textarea>
+
+
+<p> Masukkan input disini : </p>
+<textarea id="query" rows="20" cols="50">
+</textarea>
+
+<br>
+<a href="javascript:getPDF()">Download laporan </a>
+</body>
+
+
+<html>
