@@ -21,6 +21,9 @@
 
 <head>
 	<title>PDF test</title>
+	<link href="../style.css" media="all" rel="stylesheet">
+	<link href="../calendar.css" media="all" rel="stylesheet">
+	<link href="../semantic-min.css" media="all" rel="stylesheet" >
 	<script type="text/javascript" src="jspdf.min.js"></script>
 	<script type="text/javascript" src="template.js"></script>
 	<script>
@@ -69,7 +72,33 @@
 
 
 <body >
+
 <h2>Laporan 1 - Laporan Pemasukan Tahunan</h2>
+<table class="ui compact table" id="tabel_laporan_tahunan">
+	<thead>
+		<tr>
+			<th></th>
+			<th>JN</th>
+			<th>IN</th>
+			<th>KN</th>
+			<th>KP</th>
+			<th>SA</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php
+			for ($i=0;$i<12;$i++){
+				echo "<tr>";
+				echo "<td>".$month[$i]."</td>";
+				foreach ($yearres as $key => $value) {
+					echo "<td>".$value[$i]['total']."</td>";
+				}
+				echo "<tr>";
+			}
+		?>
+	</tbody>
+</table>
+
 
 <br>
 <a href="javascript:getPDF()">Download laporan </a>
