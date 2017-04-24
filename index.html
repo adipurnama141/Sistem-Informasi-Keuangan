@@ -1,250 +1,231 @@
-<html lang="en">
+<!DOCTYPE html>
 
 <head>
-	<link rel="icon" type="image/png" href="icon.png">
-	<link href="css1.css" media="all" rel="stylesheet">
-	<link href="css2.css" media="all" rel="stylesheet">
-	<link href="calendar.css" media="all" rel="stylesheet">
-	<link href="semantic-min.css" media="all" rel="stylesheet" >
-	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-	<script src="semantic-min.js"></script>
-	<script src="calendar.js"></script>
-	<script src="engine.js"></script>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" rel="stylesheet" type="text/css">
-	<title>Keuangan - SI UPT Asrama ITB</title>
-	
-	<style>
-	.tabnav-tab.selected  {
-	border-top: 3px solid black !important;
-	}
-	</style>
-    
+	<meta charset="utf-8">
+  <link rel="icon" type="image/png" href="icon.png">
+  <title>Keuangan - SI UPT Asrama ITB</title>
+  <link href="style.css" media="all" rel="stylesheet">
+  <link href="calendar.css" media="all" rel="stylesheet">
+  <link href="semantic-min.css" media="all" rel="stylesheet" >
+  <script src="jquery.js"></script>
+  <script src="semantic-min.js"></script>
+  <script src="calendar.js"></script>
+  <script src="engine.js"></script>
 </head>
 
   
-
-
-  <body>
-    
-
-<div class="position-relative js-header-wrapper ">        
-<div class="header" role="banner">
-  <div class="container clearfix">
-	<img src="icon2.png" style="width:31px;">
-
-		<ul class="header-nav float-right" role="navigation">
-		<li class="header-nav-item">
-		  <a href="https://github.com/issues"  class="js-selected-navigation-item header-nav-link" >
-			Keluar
-			</a>
-			</li>
-		</ul>
+<body>
+		<!-- Header -->
+    <div class="header">
+      <div id="header_container">
+	    	<img src="icon2.png" id="header_icon">
+	    	<ul class="header_menu_items">
+		  		<li>
+		    		<a href="localhost" id="nav_link">Keluar</a>
+		  		</li>
+				</ul>
+      </div>
     </div>
-</div>
-</div>
 
-  
+    <!-- Content Container -->
+	  <div id="content_container">
 
- 
-
-
-
-  <div role="main">
-
-	<div id="js-pjax-container" data-pjax-container="">
-	<div class="page-content container">
-
-	<div id="notification-center" class="notification-center" style=" margin-top: 26px;">
-	<div class="tabnav">
-	  <nav class="tabnav-tabs">
-		  <a href="https://github.com/notifications" class="tabnav-tab selected" >
-			<svg aria-hidden="true" class="octicon octicon-bell" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path></svg>
-			Pembayaran
-		</a>  
-		<a href="https://github.com/watching" class="tabnav-tab" id="lap_bulanan">
-			<svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
-			Laporan Bulanan
-		</a>
-		
-		
-	</nav>
-	</div>
-
-	
-<div class="gut-md" >
-<br>
-
-	<div id="modul_laporan_bulanan" style="margin-left: 16px;
-    margin-right: 22px;">
-	
-	<h1>Laporan Keuangan </h1>
-	<div class="ui horizontal statistics">
-  <div class="statistic">
-   <div class="label">
-      Rp
-    </div>
-    <div class="value" id="nominal_pemasukan">
-      2,204
-    </div>
-   
-  </div>
-  </div>
-	
-	<table class="ui compact sortable table" id="tabel_lap_bulanan">
-  <thead>
-    <tr>
-      <th>Nama</th>
-      <th>Asrama</th>
-      <th>Bank</th>
-	  <th>Nominal</th>
-	  <th>Tanggal Transfer</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    
-	
-	 
-	
-	 
-	
-	
-	
-	
-	
-	
-  </tbody>
-</table>
-	
-	
-	</div>
-
-	
-	<div id="modul_input">
-	<div class="ui success message" id="notif_ok">
-		<i class="close icon"></i>
-		<div class="header" style="background-color:white;">
-		Pembayaran berhasil
-		</div>
-		<p></p>
-	</div>
-		
-	<form id="form_pembayaran" class="ui form" style="width:40%; margin-left:20px;" onsubmit="return dosomething();"> 
-		
-		  <div class="field">
-		  <label>NIM Penghuni</label>
-			<div class="ui labeled input">
-			  <div class="ui label">
-				NIM
-			  </div>
-			  <input type="text" id="form_nim" autofocus="" autocomplete="off" required>
-			</div>
-		  </div>
-		  
-		  <div class="field">
-			  <label>Metode Pembayaran</label>
-			  <div class="ui selection dropdown" id="form_bank" tabindex="0">
-				  <i class="dropdown icon"></i>
-				  <div class="text">Bank BNI</div>
-				  <div class="menu transition hidden" tabindex="-1">
-					<div class="item" data-value="Mandiri">Bank Mandiri</div>
-					<div class="item active selected" data-value="BNI">Bank BNI</div>
-					<div class="item" data-value="Penampungan">Penampungan ITB</div>
-				  </div>	
-				</div>	
-		  </div>
-		  
-		  <div class="field">
-				<label>Pembayaran</label>
-				<div class="ui right labeled input">
-			  <div class="ui label">Rp</div>
-			  <br>
-			  <input type="text" id="form_nominal" required>
-			  <div class="ui basic label">.000</div>
-			</div>
-		  </div>
-			  
-
-		<div class="field">
-			<label>Tanggal Transfer</label>
-			<div class="ui calendar" id="example2">
-			<div class="ui input left icon">
-			  <i class="calendar icon"></i>
-			  <input type="text" id="form_tgl" class="" required>
-			</div>
-			</div>
-		</div>  
-		<button class="btn btn-primary float-right" type="submit">Simpan</button>
-	</form>
-
-		
-	<div class="ui cards" style="    margin-top: -288px;
-	margin-left: 565px;
-	width: 348px;">
-	  <div class="card showinfo" style="    width: 356px;">
-			<div class="content">
-				<a class="ui blue right ribbon label" id="asrama" ></a>
-				<div class="header" id="nama_penghuni" style="background-color:white"></div>
-					<div class="description">
-					
-						<a class="ui teal image label">
-						Kode Kamar
-						<div class="detail" id="kode_kamar" ></div>
+	  		<!-- Tab Navigation -->
+	      <div class="tab_navigation">
+	        <nav>
+						<a  class="tab_navigation_item selected" id="tab_input_data" >
+						 	<svg aria-hidden="true" class="octicon octicon-bell" height="16" version="1.1" viewBox="0 0 14 16" width="14">
+						 		<path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z">
+						 		</path>
+						 	</svg>
+							Pembayaran
 						</a>
 
-						<a class="ui red image label">
-						Tunggakan
-						<div class="detail">Rp 500.000</div>
+						<a class="tab_navigation_item" id="lap_bulanan">
+							<svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+								<path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z">
+								</path>
+							</svg>
+						Laporan Harian
 						</a>
-						
+
+						<a class="tab_navigation_item" id="lap_asrama">
+							<svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+								<path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z">
+								</path>
+							</svg>
+						Laporan Per Asrama
+						</a>
+
+						<a class="tab_navigation_item" id="lap_penghuni">
+							<svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+								<path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z">
+								</path>
+							</svg>
+						Laporan Per Penghuni
+						</a>
+
+
+					</nav>
+				</div>
+
+		<!-- Content Body -->
+		<div id="content_body" >
+
+			<!-- Modul Laporan Penghuni -->
+			<div class ="tab_content" id="modul_laporan_penghuni">
+				<!--Header Report -->
+				<h1>Laporan Tunggakan Tiap Penghuni</h1>
+				<br>
+				<!-- HTML Table Body Report -->
+				<table class="ui compact sortable table" id="tabel_lap_penghuni">
+					<thead>
+						<tr>
+	  					<th>Nama</th>
+	  					<th>Kamar</th>
+	  					<th>Tunggakan</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- Javascript Generated HTML Table Here-->
+					</tbody>
+				</table>
+			</div>
+
+
+
+			<!-- Modul Laporan Asrama -->
+			<div class ="tab_content" id="modul_laporan_asrama">
+				<!--Header Report -->
+				<h1>Laporan Keuangan Tiap Asrama</h1>
+				<br>
+				<!-- HTML Table Body Report -->
+				<table class="ui compact sortable table" id="tabel_lap_asrama">
+					<thead>
+						<tr>
+	  					<th>Asrama</th>
+	  					<th>Total Tagihan</th>
+	  					<th>Total Terbayar</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- Javascript Generated HTML Table Here-->
+					</tbody>
+				</table>
+			</div>
+
+
+
+			<!-- Modul Laporan Bulanan -->
+			<div class ="tab_content" id="modul_laporan_bulanan">
+				<!--Header Report -->
+				<h1>Laporan Pembayaran Harian </h1>
+				<div class="ui horizontal statistics">
+					<div class="statistic">
+							<div class="label">Rp</div>
+						<div class="value" id="nominal_pemasukan"></div>
 					</div>
+				</div>
+				<!-- HTML Table Body Report -->
+				<table class="ui compact sortable table" id="tabel_lap_bulanan">
+					<thead>
+						<tr>
+	  					<th>Nama</th>
+	  					<th>Asrama</th>
+	  					<th>Bank</th>
+							<th>Nominal</th>
+							<th>Tanggal Transfer</th>
+						</tr>
+					</thead>
+					<tbody>
+					<!-- Javascript Generated HTML Table Here-->
+					</tbody>
+				</table>
+			</div>
+
+
+			<!-- Modul Input Data -->
+			<div class ="tab_content" id="modul_input_data">
+
+				<!--Success Notification -->
+				<div class="ui success message" id="notif_ok">
+					<div class="header" style="background-color:white;">
+					Pembayaran berhasil
+					</div>
+				</div>
+
+				<!-- Form Pembayaran -->
+				<form id="form_pembayaran" class="ui form" onsubmit="return addTransaction();"> 
+					<!-- NIM -->
+					<div class="field">
+	  				<label>NIM Penghuni</label>
+						<div class="ui labeled input">
+		  				<div class="ui label">NIM</div>
+		  				<input type="text" id="form_nim" autofocus="" autocomplete="off" required>
+						</div>
+	  			</div>
+	  			<!-- Metode Pembayaran -->
+	  			<div class="field">
+		  				<label>Metode Pembayaran</label>
+		  				<div class="ui selection dropdown" id="form_bank" tabindex="0">
+			  				<i class="dropdown icon"></i>
+			  				<div class="text">Bank BNI</div>
+			  				<div class="menu transition hidden" tabindex="-1">
+									<div class="item" data-value="Mandiri">Bank Mandiri</div>
+									<div class="item active selected" data-value="BNI">Bank BNI</div>
+									<div class="item" data-value="Penampungan">Penampungan ITB</div>
+								</div>	
+	  				</div>
+	  			</div>
+	  			<!-- Nominal Pembayaran -->
+				  <div class="field">
+						<label>Pembayaran</label>
+						<div class="ui right labeled input">
+					  	<div class="ui label">Rp</div>
+					  	<br>
+					  	<input type="text" id="form_nominal" autocomplete="off" required>
+					  	<div class="ui basic label">.000</div>
+						</div>
+				  </div>
+		  		<!-- Tanggal Transfer -->
+					<div class="field">
+						<label>Tanggal Transfer</label>
+						<div class="ui calendar" id="tanggal_transfer">
+							<div class="ui input left icon">
+					  	<i class="calendar icon"></i>
+					  	<input type="text" id="form_tgl" class="" required>
+						</div>
+					</div>
+				</div>
+				<!-- Submit Button -->
+				<button class="button float-right" type="submit">Simpan</button>
+			</form>
+			
+			<!--Penghuni Detail Card-->
+			<div class="ui cards" id="penghuni_detail_card">
+			  <div class="card showinfo" id="penghuni_detail_card_info">
+					<div class="content">
+						<a class="ui blue right ribbon label" id="asrama" ></a>
+						<div class="header" id="nama_penghuni">	</div>
+						<div class="description">
+							<a class="ui teal image label">
+							Kode Kamar
+							<div class="detail" id="kode_kamar" ></div>
+							</a>
+							<a class="ui red image label">
+							Tunggakan
+							<div class="detail">Rp 500.000</div>
+							</a>		
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	</div>
-
-
-</div>
-		
-
- 	
-	
-<br>
-<br>        
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-<div class="container site-footer-container">
-	<div class="site-footer" role="contentinfo" style="    position: relative;
-	padding-top: 0px; 
-	padding-bottom: 0px;
-	margin-top: 4	0px;
-	font-size: 12px;
-	line-height: 1.5;
-	color: #586069;
-	border-top: 1px solid #eaecef;">
-	</div>
-</div>
+</div>	
 
 </body>
 </html>
 
 
 
-  <script>
-  
-	
-  
-  
-
-  
-
-  
-
-  </script>
