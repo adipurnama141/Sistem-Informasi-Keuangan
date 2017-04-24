@@ -1,0 +1,169 @@
+/* Body */
+
+body {
+  padding: 0;
+  overflow-x: hidden;
+  min-width: 320px;
+  background: #FFF;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-size: 14px;
+  line-height: 1.4285em;
+  color: rgba(0,0,0,.87);
+}
+
+/* Header */
+
+.header {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: rgba(255,255,255,0.75);
+  background-color: #24292e;
+}
+
+#header_icon {
+  width: 31px;
+}
+
+#header_container {
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header_menu_items {
+  list-style: none;
+  float: right !important;
+  margin: 0;
+}
+
+.header_menu_items li {
+  float: left;
+}
+
+#nav_link {
+  display: block;
+  padding: 5px 8px;
+  font-weight: 600;
+  line-height: 20px;
+  color: rgba(255,255,255,0.75);
+}
+
+#nav_link:hover {
+  color: white;
+}
+
+/* Content Container */
+
+#content_container {
+  padding-top: 20px;
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tab_navigation{
+  margin-top: 24px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d1d5da;
+}
+
+.tab_navigation nav{
+  margin-bottom: -1px;
+}
+
+.tab_navigation_item {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #586069;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 0;
+}
+
+.tab_navigation_item.selected {
+  color: #24292e;
+  background-color: #fff;
+  border-color: #d1d5da;
+  border-radius: 3px 3px 0 0;
+  border-top: 3px solid black !important;
+}
+
+.tab_content {
+  margin-top:24px;
+}
+
+/* Content Body */
+
+#content_body {
+  margin-right: -16px;
+  margin-left: -16px; 
+}
+
+#modul_laporan_bulanan {
+  margin-left: 16px;
+  margin-right: 22px;
+}
+
+
+
+
+#form_pembayaran {
+	width: 40%; 
+  margin-left: 20px;
+}
+
+#penghuni_detail_card {
+  margin-top: -288px;
+  margin-left: 565px;
+  width: 348px;
+}
+
+#penghuni_detail_card_info {
+  width: 356px;
+}
+
+#nama_penghuni {
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+
+/* Button */
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27,31,35,0.2);
+  border-radius: 0.25em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #fff;
+  background-color: #28a745;
+  background-image: -webkit-linear-gradient(270deg, #34d058 0%, #28a745 90%);
+  background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+}
+
+.float-right {
+  float: right !important;
+}
+
+a:hover {
+  cursor:pointer;
+}
