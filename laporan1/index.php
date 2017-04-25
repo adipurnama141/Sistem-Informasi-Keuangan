@@ -27,7 +27,6 @@
 	<script type="text/javascript" src="jspdf.min.js"></script>
 	<script type="text/javascript" src="template.js"></script>
 	<script>
-
 	
 
 	function getPDF() {
